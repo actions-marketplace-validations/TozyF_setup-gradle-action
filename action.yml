@@ -1,0 +1,6 @@
+name: Setup Gradle
+description: A composite GitHub Action to setup Gradle Build Tool
+author: Tozy Fullbuster
+runs:
+  using: composite
+  steps: []
