@@ -77,6 +77,12 @@ inputs:
     required: false
     default: 'true'
 
+  ### Gradle Wrapper options
+  gradle-wrapper-validation:
+    description: Should the action validates the checksums of Gradle Wrapper JAR files present in the source tree and fails if unknown Gradle Wrapper JAR files are found
+    required: false
+    default: 'true'
+
 outputs:
   build-scan-url:
     description: The URL of the build scan published by the build
@@ -107,3 +113,9 @@ runs:
         generate-job-summary: ${{ inputs.generate-job-summary }}
         gradle-home-cache-strict-match: ${{ inputs.gradle-home-cache-strict-match }}
         gradle-home-cache-cleanup: ${{ inputs.gradle-home-cache-cleanup }}
+
+    - name: Gradle Wrapper Validation
+      if: ${{ inputs.gradle-wrapper-validation == 'true' }}
+      uses: gradle/wrapper-validation-action@v1.0.6
+      with:
+        allow-snapshots: true
