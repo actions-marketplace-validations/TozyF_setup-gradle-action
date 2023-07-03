@@ -119,3 +119,7 @@ runs:
       uses: gradle/wrapper-validation-action@v1.0.6
       with:
         allow-snapshots: true
+
+branding:
+  icon: disc
+  color: green
