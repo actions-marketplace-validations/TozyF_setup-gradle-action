@@ -1,5 +1,5 @@
 name: Setup Gradle
-description: A composite GitHub Action to setup Gradle Build Tool
+description: 💿 A simple composite GitHub Action to setup Gradle Build Tool
 author: Tozy Fullbuster
 inputs:
   ### These inputs below are copied from https://github.com/actions/setup-java/blob/1f2faad7e0bc7efd1f6da4ca0a0f2b23b03a3a7d/action.yml
@@ -134,7 +134,7 @@ runs:
         check-latest: ${{ inputs.check-latest }}
         job-status: ${{ inputs.job-status }}
         token: ${{ inputs.token }}
-    
+
     - name: Gradle Build Action
       id: gradle
       uses: gradle/gradle-build-action@v2.5.1
